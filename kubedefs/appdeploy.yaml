@@ -14,21 +14,7 @@ spec:
       labels:
         app: vproapp
     spec:
-      initContainers:
-      - name: init-mydb
-        image: busybox:1.35
-        command:
-        - sh
-        - -c
-        - 'until nc -z vprodb 3306; do echo waiting for mydb; sleep 2; done;'
-      
-      - name: init-memcache
-        image: busybox:1.35
-        command:
-        - sh
-        - -c
-        - 'until nc -z vprocache01 11211; do echo waiting for memcache; sleep 2; done;'
-      
+
       containers:
       - name: vproapp
         image: vprocontainers/vprofileapp
