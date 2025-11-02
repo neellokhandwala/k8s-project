@@ -37,8 +37,6 @@ This project solves these problems by implementing:
 
 ## Architecture Components
 
-![Application Screenshot](images/application-screenshot.png)
-
 - **Frontend**: Java Spring MVC application (Containerized)
 - **Database**: MySQL 8 (Persistent storage with StatefulSet)
 - **Cache**: Memcached (In-memory caching for performance)
@@ -87,6 +85,8 @@ This project solves these problems by implementing:
 - **Free DNS**: Using nip.io eliminates DNS costs
 
 ## Results & Metrics
+
+![Application Screenshot](images/application-screenshot.png)
 
 - **Deployment Time**: Reduced from hours to minutes
 - **Scalability**: Can handle 10x traffic with auto-scaling
