@@ -17,14 +17,16 @@ spec:
       initContainers:
       - name: init-mydb
         image: busybox:1.35
-        command: ["sh", "-c"]
-        args:
+        command:
+        - sh
+        - -c
         - 'until nslookup vprodb.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for mydb; sleep 2; done;'
       
       - name: init-memcache
         image: busybox:1.35
-        command: ["sh", "-c"]
-        args:
+        command:
+        - sh
+        - -c
         - 'until nslookup vprocache01.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for memcache; sleep 2; done;'
       
       containers:
