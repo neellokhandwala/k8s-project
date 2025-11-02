@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vproapp-clean
+  labels: 
+    app: vproapp-clean
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vproapp-clean
+  template:
+    metadata:
+      labels:
+        app: vproapp-clean
+    spec:
+      containers:
+      - name: vproapp
+        image: vprocontainers/vprofileapp
+        imagePullPolicy: Always
+        ports:
+        - name: vproapp-port
+          containerPort: 8080
