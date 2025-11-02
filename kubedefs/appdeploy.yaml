@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vproapp
+  name: vproapp-v2
   labels: 
     app: vproapp
 spec:
